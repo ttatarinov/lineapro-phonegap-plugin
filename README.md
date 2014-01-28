@@ -1,7 +1,7 @@
 lineapro-phonegap-plugin
 ========================
 
-# Device support
+## Device support
 Universal plugin for following devices:
 
 * PPAD 1.0
@@ -17,13 +17,13 @@ Universal plugin for following devices:
 * iSerial
 * Linea-Pro
 
-# Supported features:
+## Supported features:
 
 * Automatically device connection
 * Log all events
 * Start/Stop Barcode methods
 
-# Additional info
+## Additional info
 
 Using iOS SDK from http://www.datecs.bg/en/products/Universal-iOS-SDK/8/121
 
