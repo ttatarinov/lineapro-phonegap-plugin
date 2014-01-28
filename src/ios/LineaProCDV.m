@@ -1,14 +1,12 @@
 //
 //  LineaProCDV.m
-//  Planstery
 //
 //  Created by Timofey Tatarinov on 27.01.14.
-//
+//  Citronium
+//  http://citronium.com
 //
 
 #import "LineaProCDV.h"
-#import "TestFlight.h"
-#define NSLog TFLog
 
 @implementation LineaProCDV
 

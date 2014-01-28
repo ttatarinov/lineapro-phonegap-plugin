@@ -1,9 +1,9 @@
 //
-//  ZBarCDVPlugin.h
-//  Planstery
+//  LineaProCDV.h
 //
 //  Created by Timofey Tatarinov on 27.01.14.
-//
+//  Citronium
+//  http://citronium.com
 //
 
 #import <UIKit/UIKit.h>
