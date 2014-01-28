@@ -1,4 +1,4 @@
-cordova.define("com.citronium.lineaprocdv.LineaProCDV", function(require, exports, module) {var argscheck = require('cordova/argscheck'),
+var argscheck = require('cordova/argscheck'),
     channel = require('cordova/channel'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec'),
@@ -33,4 +33,3 @@ LineaProCDV.prototype.connectionChanged = function(state) {
                
               
 module.exports = new LineaProCDV();
-});
