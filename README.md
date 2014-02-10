@@ -1,6 +1,10 @@
 lineapro-phonegap-plugin
 ========================
 
+## Quick start
+To start plugin need to execute 'LineaProCDV.initDT()' method. 
+Recommended to add this into 'deviceready' handler.
+
 ## Device support
 Universal plugin for following devices:
 
