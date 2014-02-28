@@ -228,7 +228,7 @@
     NSLog(@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@", dateBirth, name, lastName, eye, state, city, height, weight, gender, hair, expires, license);
     
     //LineaProCDV.onBarcodeData(scanId, dob, state, city, expires, gender, height, weight, hair, eye)
-    NSString* retStr = [ NSString stringWithFormat:@"LineaProCDV.onBarcodeData('%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@');", license, dateBirth, state, city, expires, gender, height, weight, hair, eye];
+    NSString* retStr = [ NSString stringWithFormat:@"LineaProCDV.onBarcodeData('%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@');", license, dateBirth, state, city, expires, gender, height, weight, hair, eye, name, lastName];
     [[super webView] stringByEvaluatingJavaScriptFromString:retStr];
 }
 
