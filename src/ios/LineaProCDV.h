@@ -21,4 +21,7 @@
 - (void)startBarcode:(CDVInvokedUrlCommand*)command;
 - (void)stopBarcode:(CDVInvokedUrlCommand*)command;
 
+-(void) scannerConect:(NSString*)num;
+-(void) scannerBattery:(NSString*)num;
+
 @end
