@@ -5,6 +5,15 @@ lineapro-phonegap-plugin
 To start plugin need to execute 'LineaProCDV.initDT()' method. 
 Recommended to add this into 'deviceready' handler.
 
+###
+!!! You must add section "UISupportedExternalAccessoryProtocols" into "[Project Name].plist" file. 
+This section should include the following items:
+
+* com.datecs.linea.pro.msr
+* com.datecs.iserial.communication
+* com.datecs.pinpad
+* com.datecs.linea.pro.bar
+
 ## Device support
 Universal plugin for following devices:
 
