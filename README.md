@@ -6,7 +6,7 @@ To start plugin need to execute 'LineaProCDV.initDT()' method.
 Recommended to add this into 'deviceready' handler.
 
 ###
-!!! You must add section "UISupportedExternalAccessoryProtocols" into "[Project Name].plist" file. 
+!!! You must add section "SupportedExternalAccessoryProtocols" into "[Project Name].plist" file. 
 This section should include the following items:
 
 * com.datecs.linea.pro.msr
