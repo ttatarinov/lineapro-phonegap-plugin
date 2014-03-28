@@ -197,10 +197,23 @@
     return NULL;
 }
 
++ (NSString*) generateStringForArrayEvaluationInJS: (NSArray*) stringsArray {
+    NSString* arrayJSString = [NSString stringWithFormat:@"["];
+    BOOL isFirst = TRUE;
+    for (int i = 0; i < stringsArray.count; ++i) {
+        NSString* currString = [stringsArray objectAtIndex:i];
+        if (currString.length <= 1) continue;
+        arrayJSString = [NSString stringWithFormat:@"%@%@\"%@\"", arrayJSString, isFirst ? @"" : @",", currString];
+        isFirst = FALSE;
+    }
+    arrayJSString = [NSString stringWithFormat:@"%@]", arrayJSString];
+    return arrayJSString;
+}
+
 - (void) barcodeNSData: (NSData *) barcode type:(int) type {
     NSLog(@"barcodeNSData: barcode - %@, type - %@", [[NSString alloc] initWithData:barcode encoding:NSUTF8StringEncoding], [dtdev barcodeType2Text:type]);
     NSArray *codesArr = [[[NSString alloc] initWithData:barcode encoding:NSUTF8StringEncoding] componentsSeparatedByCharactersInSet:
-                        [NSCharacterSet characterSetWithCharactersInString:@"\n"]];
+                        [NSCharacterSet characterSetWithCharactersInString:@"\n\r"]];
     NSString* substrDateBirth = @"DBB";
     NSString* dateBirth = [LineaProCDV getPDF417ValueByCode:codesArr code: substrDateBirth];
     NSString* substrName = @"DAC";
@@ -227,8 +240,9 @@
     NSString* license = [LineaProCDV getPDF417ValueByCode:codesArr code: substrLicense];
     NSLog(@"%@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@", dateBirth, name, lastName, eye, state, city, height, weight, gender, hair, expires, license);
     
+    NSString* rawCodesArrJSString = [LineaProCDV generateStringForArrayEvaluationInJS:codesArr];
     //LineaProCDV.onBarcodeData(scanId, dob, state, city, expires, gender, height, weight, hair, eye)
-    NSString* retStr = [ NSString stringWithFormat:@"LineaProCDV.onBarcodeData('%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@');", license, dateBirth, state, city, expires, gender, height, weight, hair, eye, name, lastName];
+    NSString* retStr = [ NSString stringWithFormat:@"var rawCodesArr = %@; LineaProCDV.onBarcodeData(rawCodesArr, '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@');", rawCodesArrJSString, license, dateBirth, state, city, expires, gender, height, weight, hair, eye, name, lastName];
     [[super webView] stringByEvaluatingJavaScriptFromString:retStr];
 }
 
