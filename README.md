@@ -14,6 +14,9 @@ This section should include the following items:
 * com.datecs.pinpad
 * com.datecs.linea.pro.bar
 
+### Sample cordova project
+The sample project which is using this plugin available here https://github.com/ttatarinov/lineapro-phonegap-plugin-example
+
 ## Device support
 Universal plugin for following devices:
 
