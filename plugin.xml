@@ -31,6 +31,17 @@
         <source-file src="src/ios/libdtdev.a" framework="true" compiler-flags="-fno-objc-arc"/>
         
         <framework src="ExternalAccessory.framework" />
+        
+        
+        <config-file target="*-Info.plist" parent="UISupportedExternalAccessoryProtocols">
+          <array>
+    		<string>com.datecs.linea.pro.msr</string>
+    		<string>com.datecs.iserial.communication</string>
+    		<string>com.datecs.pinpad</string>
+    		<string>com.datecs.linea.pro.bar</string>
+    	  </array>
+        </config-file>
+
     </platform>
 
     
